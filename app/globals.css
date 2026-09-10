@@ -1,29 +1,58 @@
 /* globals.css — Design system tokens */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #0a0b0f;
-  --bg-2: #111318;
-  --bg-3: #1a1d26;
-  --border: #242736;
-  --border-bright: #353a52;
-  --text: #e8eaf0;
-  --text-muted: #7c82a0;
-  --text-dim: #4a5068;
-  --accent: #6c63ff;
-  --accent-2: #3ecfcf;
-  --accent-3: #ff6b9d;
-  --success: #2ecc71;
-  --warning: #f0a500;
-  --danger: #ff4757;
-  --font: 'Inter', -apple-system, sans-serif;
-  --radius: 12px;
-  --radius-sm: 8px;
+  /* Backgrounds */
+  --bg:          #040508;
+  --bg-2:        #090b12;
+  --bg-3:        #0f1220;
+  --bg-4:        #161a2c;
+  --bg-card:     rgba(15, 18, 32, 0.8);
+
+  /* Borders */
+  --border:        rgba(255,255,255,0.06);
+  --border-mid:    rgba(255,255,255,0.10);
+  --border-bright: rgba(255,255,255,0.18);
+
+  /* Text */
+  --text:       #f0f2ff;
+  --text-soft:  #c8cde8;
+  --text-muted: #7c85ad;
+  --text-dim:   #3d4366;
+
+  /* Brand accents */
+  --violet:     #7c6dfa;
+  --violet-dim: rgba(124,109,250,0.15);
+  --cyan:       #3dd8c8;
+  --cyan-dim:   rgba(61,216,200,0.12);
+  --pink:       #f06aab;
+  --pink-dim:   rgba(240,106,171,0.12);
+  --amber:      #f0a842;
+  --amber-dim:  rgba(240,168,66,0.12);
+  --green:      #34d399;
+  --green-dim:  rgba(52,211,153,0.10);
+  --red:        #f87171;
+  --red-dim:    rgba(248,113,113,0.10);
+
+  /* Sponsor colors */
+  --graph-color: #6f4ef6;
+  --ens-color:   #5298ff;
+  --baz-color:   #f04e98;
+
+  /* Misc */
+  --font:       'Inter', 'Space Grotesk', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
+  --radius:     16px;
+  --radius-sm:  10px;
+  --radius-xs:  6px;
+
+  /* Shadows */
+  --shadow-violet: 0 0 40px rgba(124,109,250,0.2);
+  --shadow-card:   0 4px 24px rgba(0,0,0,0.4);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { font-size: 16px; }
+html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
   font-family: var(--font);
@@ -31,4 +60,17 @@ body {
   color: var(--text);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-2); }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-bright); }
+
+/* Selection */
+::selection { background: var(--violet-dim); color: var(--text); }
+
+/* Focus rings */
+:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
